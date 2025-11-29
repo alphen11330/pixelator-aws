@@ -11,6 +11,8 @@ import ImageEditor from "./components/ImageEditor";
 import DitherTypeDropdown from "./components/DitherTypeDropdown";
 import Downloader from "./components/Downloader";
 import ColorPalette from "./components/ColorPalette";
+import RefreshButton from "./components/RefreshButton";
+import Painter from "./components/painter/Painter";
 
 declare global {
   interface Window {
@@ -40,13 +42,13 @@ export default function Page() {
   const [isSaturation, setIsSaturation] = useState(true);
   const [saturation, setSaturation] = useState(30); // 彩度の値
   const [contrast, setContrast] = useState(true);
-  const [contrastLevel, setContrastLevel] = useState(1.2); // コントラスト
+  const [contrastLevel, setContrastLevel] = useState(1.1); // コントラスト
   const [brightness, setBrightness] = useState(false);
   const [brightnessLevel, setBrightnessLevel] = useState(25); // 明度
 
   //減色処理
   const [colorReduction, setColorReduction] = useState(false); // 減色処理の判定
-  const [colorLevels, setColorLevels] = useState(5); // 減色数(bit)
+  const [colorLevels, setColorLevels] = useState(4); // 減色数(bit)
   const [colorPalette, setColorPalette] = useState<string[]>([]); // 減色したカラーパレット
   const [lockPalette, setLockPalette] = useState(false);
 
@@ -57,6 +59,9 @@ export default function Page() {
   //輪郭線強調
   const [edgeEnhancement, setEdgeEnhancement] = useState(false); // 輪郭線強調の判定
   const [whiteSize, setWhiteSize] = useState(2); // 白画素処理サイズ（正:縮小、負:拡大）
+
+  const [isPainter, setIsPainter] = useState(false);
+
   // OpenCV.js をロード
   useEffect(() => {
     const script = document.createElement("script");
@@ -69,7 +74,7 @@ export default function Page() {
   const gridContainer: React.CSSProperties = {
     position: "relative",
     width: "100%",
-    height: "100svh",
+    height: "calc(100svh - 50px)",
     display: "grid",
     gridTemplateColumns: isPC ? "1fr 1fr" : "1fr",
     gridTemplateRows: isPC ? "1fr" : "1fr 1fr",
@@ -80,13 +85,13 @@ export default function Page() {
   const gridBox: React.CSSProperties = {
     overflowY: "auto",
     width: "100%",
-    height: isPC ? "calc(100svh - 0px)" : "calc(100svh / 2)",
+    // height: isPC ? "calc(100svh - 0px)" : "calc(100svh / 2)",
   };
 
   const dotsBox: React.CSSProperties = {
     position: "relative",
     height: isPC ? "" : "min(100% - 20px)",
-    width: isPC ? "90%" : "min(100% - 20px)",
+    width: isPC ? "80%" : "min(100% - 20px)",
     aspectRatio: "1/1",
     display: "flex",
     border: "solid 1px rgb(135, 135, 135)",
@@ -98,8 +103,8 @@ export default function Page() {
       rgb(226, 226, 226) 25%, rgb(255, 255, 255) 25%, rgb(255, 255, 255) 50%,
       rgb(226, 226, 226) 50%, rgb(226, 226, 226) 75%, rgb(255, 255, 255) 75%, rgb(255, 255, 255) 100%
     )`,
-    backgroundSize: "40px 40px",
-    backgroundPosition: "10px 10px",
+    backgroundSize: isPC ? "10% 10%" : "40px 40px",
+    backgroundPosition: isPC ? "2.5% 2.5%" : "10px 10px",
     userSelect: "none",
   };
 
@@ -126,27 +131,41 @@ export default function Page() {
         >
           {/* 画像ディスプレイ  */}
           <div style={dotsBox}>
-            <span
-              onClick={() => setDisplay(!display)} // クリックで display 変更
-            >
-              {display && <span className={style.dotToImg} />}
-              {!display && <span className={style.imgToDot} />}
-            </span>
-
             {imageSrc && (
-              <span style={{ opacity: display ? "1" : "0" }}>
-                <PixelArtProcessor //スムーズ画像をドット絵に変換
-                  smoothImageSrc={smoothImageSrc}
-                  dotsImageSrc={dotsImageSrc}
-                  setDotsImageSrc={setDotsImageSrc}
-                  pixelLength={pixelLength}
-                  colorReduction={colorReduction}
-                  colorPalette={colorPalette}
-                  colorLevels={colorLevels}
-                  ditherType={ditherType}
-                  ditherStrength={ditherStrength}
-                />
-              </span>
+              <>
+                <span
+                  onClick={() => setDisplay(!display)} // クリックで display 変更
+                >
+                  {display && <span className={style.dotToImg} />}
+                  {!display && <span className={style.imgToDot} />}
+                </span>
+
+                {/* <span
+                  className={style.openPainter}
+                  onClick={() => setIsPainter(true)} // クリックで ペインターを開く
+                >
+                  <img
+                    src="/palette.png"
+                    alt="Palette"
+                    className={style.palette}
+                  />
+                  <img src="/brush.png" alt="Brush" className={style.brush} />
+                </span> */}
+
+                <span style={{ opacity: display ? "1" : "0" }}>
+                  <PixelArtProcessor //スムーズ画像をドット絵に変換
+                    smoothImageSrc={smoothImageSrc}
+                    dotsImageSrc={dotsImageSrc}
+                    setDotsImageSrc={setDotsImageSrc}
+                    pixelLength={pixelLength}
+                    colorReduction={colorReduction}
+                    colorPalette={colorPalette}
+                    colorLevels={colorLevels}
+                    ditherType={ditherType}
+                    ditherStrength={ditherStrength}
+                  />
+                </span>
+              </>
             )}
             {imageSrc && smoothImageSrc && (
               <>
@@ -182,10 +201,27 @@ export default function Page() {
                   isRecommendedSize={isRecommendedSize}
                 />
                 {/* リフレッシュボタン */}
-                <button
-                  className={style.refreshButton}
-                  onClick={() => setRefreshColorPalette(!refreshColorPalette)}
-                ></button>
+                <RefreshButton
+                  setColorCollection={setColorCollection}
+                  setEdgeEnhancement={setEdgeEnhancement}
+                  setColorReduction={setColorReduction}
+                  setContrast={setContrast}
+                  setBrightness={setBrightness}
+                  setIsHue={setIsHue}
+                  setIsLuminance={setIsLuminance}
+                  setIsSaturation={setIsSaturation}
+                  setPixelLength={setPixelLength}
+                  setContrastLevel={setContrastLevel}
+                  setBrightnessLevel={setBrightnessLevel}
+                  setHue={setHue}
+                  setLuminance={setLuminance}
+                  setSaturation={setSaturation}
+                  setWhiteSize={setWhiteSize}
+                  setDitherType={setDitherType}
+                  setDitherStrength={setDitherStrength}
+                  setColorLevels={setColorLevels}
+                  setLockPalette={setLockPalette}
+                />
               </>
             )}
           </div>
@@ -236,7 +272,7 @@ export default function Page() {
                             name={"コントラスト"}
                             min={0.1}
                             max={2}
-                            step={0.1}
+                            step={0.01}
                             value={contrastLevel}
                             unit={""}
                             setValue={setContrastLevel}
@@ -394,7 +430,13 @@ export default function Page() {
           )}
         </div>
       </div>
-
+      {isPainter && (
+        <Painter
+          dotsImageSrc={dotsImageSrc}
+          setIsPainter={setIsPainter}
+          pixelLength={pixelLength}
+        />
+      )}
       {smoothImageSrc && imageSrc && (
         <>
           <ImageEditor

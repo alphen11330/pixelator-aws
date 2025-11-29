@@ -150,7 +150,7 @@ const Header = () => {
             </span>
           </Link>
         </div>
-        {!isPC && (
+        {/* {!isPC && (
           <div
             style={hamburgerFrame}
             onClick={() => setClickHamburger(!clickHamburger)}
@@ -159,13 +159,13 @@ const Header = () => {
             <div style={line2} />
             <div style={line3} />
           </div>
-        )}
+        )} */}
       </div>
-      <div style={hamburgerBoad}>
+      {/* <div style={hamburgerBoad}>
         <p style={hamburgerContent}>このサイトについて</p>
         <p style={hamburgerContent}>使い方</p>
         <p style={hamburgerContent}>コンタクト</p>
-      </div>
+      </div> */}
     </>
   );
 };

@@ -15,7 +15,7 @@ const Header = () => {
     backgroundColor: "rgb(255, 255, 255)",
     borderBottom: "solid 1px rgb(167, 167, 167)",
     userSelect: "none",
-    zIndex: 10,
+    zIndex: "9999",
   };
 
   const headerTextStyle: React.CSSProperties = {
@@ -83,12 +83,11 @@ const Header = () => {
     transform: "translate(calc(-100% - 1rem),-50%)",
     width: "24px",
     aspectRatio: "4/3",
-    backgroundColor: clickHamburger ? "" : "rgba(255, 255, 255, 0)",
+    backgroundColor: "rgb(255, 255, 255)",
     display: "flex",
     flexDirection: "column",
     justifyContent: "space-between",
     cursor: "pointer",
-    zIndex: "2",
   };
   const line1: React.CSSProperties = {
     width: clickHamburger ? "100%" : "100%",
@@ -116,16 +115,18 @@ const Header = () => {
   };
   const hamburgerBoad: React.CSSProperties = {
     position: "fixed",
+    top: "0px",
     right: isPC ? "-50%" : clickHamburger ? "0%" : "-50%",
     width: "50%",
     height: "100%",
-    backgroundColor: "rgba(200, 234, 224, 0.85)",
+    backgroundColor: "rgba(0, 0, 0, 0.84)",
     transition: "all 0.5s ease",
+
     display: "flex",
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "center",
-    zIndex: "1",
+    zIndex: "10",
   };
   const hamburgerContent: React.CSSProperties = {
     width: "80%",
@@ -149,7 +150,7 @@ const Header = () => {
             </span>
           </Link>
         </div>
-        {!isPC && (
+        {/* {!isPC && (
           <div
             style={hamburgerFrame}
             onClick={() => setClickHamburger(!clickHamburger)}
@@ -158,13 +159,13 @@ const Header = () => {
             <div style={line2} />
             <div style={line3} />
           </div>
-        )}
-        <div style={hamburgerBoad}>
-          <p style={hamburgerContent}>このサイトについて</p>
-          <p style={hamburgerContent}>使い方</p>
-          <p style={hamburgerContent}>コンタクト</p>
-        </div>
+        )} */}
       </div>
+      {/* <div style={hamburgerBoad}>
+        <p style={hamburgerContent}>このサイトについて</p>
+        <p style={hamburgerContent}>使い方</p>
+        <p style={hamburgerContent}>コンタクト</p>
+      </div> */}
     </>
   );
 };

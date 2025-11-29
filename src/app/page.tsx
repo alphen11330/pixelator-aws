@@ -140,7 +140,7 @@ export default function Page() {
                   {!display && <span className={style.imgToDot} />}
                 </span>
 
-                <span
+                {/* <span
                   className={style.openPainter}
                   onClick={() => setIsPainter(true)} // クリックで ペインターを開く
                 >
@@ -150,7 +150,7 @@ export default function Page() {
                     className={style.palette}
                   />
                   <img src="/brush.png" alt="Brush" className={style.brush} />
-                </span>
+                </span> */}
 
                 <span style={{ opacity: display ? "1" : "0" }}>
                   <PixelArtProcessor //スムーズ画像をドット絵に変換
