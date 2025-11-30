@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./header";
-import ClientRedirect from "./ClientRedirect"; // リダイレクトコンポーネント
+import ClientRedirect from "./ClientRedirect"; // クライアントコンポーネント
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -26,15 +26,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ja">
-      <head>
-        <link rel="canonical" href="https://pixelator.net/" />
-      </head>
+    <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <ClientRedirect /> {/* pages.dev からのアクセスを強制リダイレクト */}
+        <ClientRedirect />
         {children}
       </body>
     </html>
