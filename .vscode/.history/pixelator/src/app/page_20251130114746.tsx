@@ -13,7 +13,6 @@ import Downloader from "./components/Downloader";
 import ColorPalette from "./components/ColorPalette";
 import RefreshButton from "./components/RefreshButton";
 import Painter from "./components/painter/Painter";
-import RandomButton from "./components/RandomButton";
 
 declare global {
   interface Window {
@@ -223,22 +222,7 @@ export default function Page() {
                   setColorLevels={setColorLevels}
                   setLockPalette={setLockPalette}
                 />
-                <RandomButton
-                  setColorCollection={setColorCollection}
-                  setEdgeEnhancement={setEdgeEnhancement}
-                  setColorReduction={setColorReduction}
-                  setContrast={setContrast}
-                  setIsHue={setIsHue}
-                  setIsSaturation={setIsSaturation}
-                  setPixelLength={setPixelLength}
-                  setContrastLevel={setContrastLevel}
-                  setHue={setHue}
-                  setSaturation={setSaturation}
-                  setWhiteSize={setWhiteSize}
-                  setDitherStrength={setDitherStrength}
-                  setColorPalette={setColorPalette}
-                  setDitherType={setDitherType}
-                />
+                <RandomButton />
               </>
             )}
           </div>

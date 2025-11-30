@@ -13,7 +13,6 @@ import Downloader from "./components/Downloader";
 import ColorPalette from "./components/ColorPalette";
 import RefreshButton from "./components/RefreshButton";
 import Painter from "./components/painter/Painter";
-import RandomButton from "./components/RandomButton";
 
 declare global {
   interface Window {
@@ -141,7 +140,7 @@ export default function Page() {
                   {!display && <span className={style.imgToDot} />}
                 </span>
 
-                {/* <span
+                <span
                   className={style.openPainter}
                   onClick={() => setIsPainter(true)} // クリックで ペインターを開く
                 >
@@ -151,7 +150,7 @@ export default function Page() {
                     className={style.palette}
                   />
                   <img src="/brush.png" alt="Brush" className={style.brush} />
-                </span> */}
+                </span>
 
                 <span style={{ opacity: display ? "1" : "0" }}>
                   <PixelArtProcessor //スムーズ画像をドット絵に変換
@@ -222,22 +221,6 @@ export default function Page() {
                   setDitherStrength={setDitherStrength}
                   setColorLevels={setColorLevels}
                   setLockPalette={setLockPalette}
-                />
-                <RandomButton
-                  setColorCollection={setColorCollection}
-                  setEdgeEnhancement={setEdgeEnhancement}
-                  setColorReduction={setColorReduction}
-                  setContrast={setContrast}
-                  setIsHue={setIsHue}
-                  setIsSaturation={setIsSaturation}
-                  setPixelLength={setPixelLength}
-                  setContrastLevel={setContrastLevel}
-                  setHue={setHue}
-                  setSaturation={setSaturation}
-                  setWhiteSize={setWhiteSize}
-                  setDitherStrength={setDitherStrength}
-                  setColorPalette={setColorPalette}
-                  setDitherType={setDitherType}
                 />
               </>
             )}
