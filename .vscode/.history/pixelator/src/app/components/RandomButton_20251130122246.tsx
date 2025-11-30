@@ -1,3 +1,4 @@
+import useDeviceChecker from "../deviceChecker";
 import style from "../util.module.css";
 
 type Props = {
@@ -51,6 +52,8 @@ const RandomButton: React.FC<Props> = ({
   setColorPalette,
   setDitherType,
 }) => {
+  const isPC = useDeviceChecker();
+
   const setRandom = () => {
     setColorCollection(true); //色調補正オン
     setEdgeEnhancement(true); //輪郭線協調オン
@@ -121,7 +124,7 @@ const RandomButton: React.FC<Props> = ({
           display: "inline-flex",
           justifyContent: "center",
           alignItems: "center",
-          marginLeft: "1rem",
+          marginLeft: "auto",
         }}
         className={style.rainbowButton}
         onClick={() => setRandom()}
