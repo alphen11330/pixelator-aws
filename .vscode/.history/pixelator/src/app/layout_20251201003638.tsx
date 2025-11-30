@@ -1,8 +1,10 @@
+"use client"; // クライアントサイドで useEffect を使うため必須
+
+import { useEffect } from "react";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./header";
-import ClientRedirect from "./ClientRedirect"; // クライアントコンポーネント
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -25,13 +27,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useEffect(() => {
+    if (
+      typeof window !== "undefined" &&
+      window.location.hostname !== "pixelator.net"
+    ) {
+      window.location.href = `https://pixelator.net${window.location.pathname}${window.location.search}`;
+    }
+  }, []);
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <ClientRedirect />
         {children}
       </body>
     </html>
