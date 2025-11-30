@@ -88,8 +88,8 @@
 
 /* ランダムボタン */
 .rainbowButton {
-  width: 100%;
-  padding: 10px 15px;
+  width: "calc(100% - 6rem)",
+    padding: 10px 15px;
   color: rgb(255, 255, 255);
   background-size: 400% 400%;
   border: none;

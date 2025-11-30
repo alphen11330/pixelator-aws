@@ -181,39 +181,12 @@ export default function Page() {
           </div>
         </div>
         {/* パネル操作画面 */}
+        <div style={gridBox}></div>
         <div style={gridBox}>
-          {imageSrc && (
-            <div
-              style={{
-                width: "calc(100% - 6rem)",
-                marginTop: "0.5rem",
-                marginInline: "auto",
-                display: "flex",
-                alignItems: "strech",
-              }}
-            >
-              <RandomButton
-                setColorCollection={setColorCollection}
-                setEdgeEnhancement={setEdgeEnhancement}
-                setColorReduction={setColorReduction}
-                setContrast={setContrast}
-                setIsHue={setIsHue}
-                setIsSaturation={setIsSaturation}
-                setPixelLength={setPixelLength}
-                setContrastLevel={setContrastLevel}
-                setHue={setHue}
-                setSaturation={setSaturation}
-                setWhiteSize={setWhiteSize}
-                setDitherStrength={setDitherStrength}
-                setColorPalette={setColorPalette}
-                setDitherType={setDitherType}
-              />
-            </div>
-          )}
           <div
             style={{
               width: "calc(100% - 6rem)",
-              marginTop: "1rem",
+              marginTop: "2rem",
               marginInline: "auto",
               display: "flex",
               alignItems: "strech",
@@ -250,6 +223,22 @@ export default function Page() {
                   setDitherStrength={setDitherStrength}
                   setColorLevels={setColorLevels}
                   setLockPalette={setLockPalette}
+                />
+                <RandomButton
+                  setColorCollection={setColorCollection}
+                  setEdgeEnhancement={setEdgeEnhancement}
+                  setColorReduction={setColorReduction}
+                  setContrast={setContrast}
+                  setIsHue={setIsHue}
+                  setIsSaturation={setIsSaturation}
+                  setPixelLength={setPixelLength}
+                  setContrastLevel={setContrastLevel}
+                  setHue={setHue}
+                  setSaturation={setSaturation}
+                  setWhiteSize={setWhiteSize}
+                  setDitherStrength={setDitherStrength}
+                  setColorPalette={setColorPalette}
+                  setDitherType={setDitherType}
                 />
               </>
             )}

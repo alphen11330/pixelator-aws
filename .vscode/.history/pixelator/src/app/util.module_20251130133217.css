@@ -87,23 +87,7 @@
 }
 
 /* ランダムボタン */
-.rainbowButton {
-  width: 100%;
-  padding: 10px 15px;
-  color: rgb(255, 255, 255);
-  background-size: 400% 400%;
-  border: none;
-  border-radius: 100px;
-  cursor: pointer;
-  position: relative;
-  z-index: 0;
-  overflow: hidden;
-  transition: color 0.3s;
-  border: 2px solid hsla(140, 39%, 49%, 0);
-  animation: rainbow 1.5s linear infinite;
-  scale: 1.0;
-  transition: all 0.3s;
-}
+.rainbowButton {}
 
 .rainbowButton::before {
   content: "";

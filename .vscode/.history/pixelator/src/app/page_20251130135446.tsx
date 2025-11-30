@@ -182,7 +182,7 @@ export default function Page() {
         </div>
         {/* パネル操作画面 */}
         <div style={gridBox}>
-          {imageSrc && (
+          {isPC && (
             <div
               style={{
                 width: "calc(100% - 6rem)",
@@ -213,7 +213,7 @@ export default function Page() {
           <div
             style={{
               width: "calc(100% - 6rem)",
-              marginTop: "1rem",
+              marginTop: "0.5rem",
               marginInline: "auto",
               display: "flex",
               alignItems: "strech",

@@ -121,7 +121,7 @@ const RandomButton: React.FC<Props> = ({
           display: "inline-flex",
           justifyContent: "center",
           alignItems: "center",
-          margin: "auto",
+          marginRight: "auto",
         }}
         className={style.rainbowButton}
         onClick={() => setRandom()}
@@ -130,7 +130,7 @@ const RandomButton: React.FC<Props> = ({
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="size-6"
+          className="size-1"
         >
           <path
             fillRule="evenodd"

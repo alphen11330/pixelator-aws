@@ -182,16 +182,16 @@ export default function Page() {
         </div>
         {/* パネル操作画面 */}
         <div style={gridBox}>
-          {imageSrc && (
-            <div
-              style={{
-                width: "calc(100% - 6rem)",
-                marginTop: "0.5rem",
-                marginInline: "auto",
-                display: "flex",
-                alignItems: "strech",
-              }}
-            >
+          <div
+            style={{
+              width: "calc(100% - 6rem)",
+              marginTop: "2rem",
+              marginInline: "auto",
+              display: "flex",
+              alignItems: "strech",
+            }}
+          >
+            <p>
               <RandomButton
                 setColorCollection={setColorCollection}
                 setEdgeEnhancement={setEdgeEnhancement}
@@ -208,17 +208,7 @@ export default function Page() {
                 setColorPalette={setColorPalette}
                 setDitherType={setDitherType}
               />
-            </div>
-          )}
-          <div
-            style={{
-              width: "calc(100% - 6rem)",
-              marginTop: "1rem",
-              marginInline: "auto",
-              display: "flex",
-              alignItems: "strech",
-            }}
-          >
+            </p>
             <Uploader // 画像をアップロード
               setImageSrc={setImageSrc}
               setSmoothImageSrc={setSmoothImageSrc}

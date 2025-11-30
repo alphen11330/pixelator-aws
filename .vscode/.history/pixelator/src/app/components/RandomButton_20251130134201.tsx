@@ -117,12 +117,12 @@ const RandomButton: React.FC<Props> = ({
   return (
     <>
       <button
-        style={{
-          display: "inline-flex",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: "auto",
-        }}
+        // style={{
+        //   display: "inline-flex",
+        //   justifyContent: "center",
+        //   alignItems: "center",
+        //   marginLeft: "1rem",
+        // }}
         className={style.rainbowButton}
         onClick={() => setRandom()}
       >

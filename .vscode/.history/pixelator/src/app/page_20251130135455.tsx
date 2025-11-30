@@ -213,7 +213,7 @@ export default function Page() {
           <div
             style={{
               width: "calc(100% - 6rem)",
-              marginTop: "1rem",
+              marginTop: "0.5rem",
               marginInline: "auto",
               display: "flex",
               alignItems: "strech",
