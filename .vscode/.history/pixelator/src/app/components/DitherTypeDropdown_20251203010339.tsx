@@ -27,7 +27,7 @@ const DitherTypeDropdown: React.FC<Props> = ({
     },
     {
       value: "bayerMatrixDiagonal1",
-      label: isJP ? "斜めじま↗" : "diagonal stripes↘",
+      label: isJP ? "斜めじま↘" : "diagonal stripes↘",
     },
     {
       value: "bayerMatrixDiagonal2",

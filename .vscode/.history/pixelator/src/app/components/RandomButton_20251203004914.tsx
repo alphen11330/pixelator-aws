@@ -28,7 +28,6 @@ const dithers = [
   { value: "bayerMatrixCRT_Vertical", label: "たてじま" },
   { value: "bayerMatrixCRT_Horizontal", label: "よこじま" },
   { value: "bayerMatrixDiagonal1", label: "斜めストライプ" },
-  { value: "bayerMatrixDiagonal2", label: "斜めストライプ" },
   { value: "bayerMatrixMeshLight", label: "メッシュ（明）" },
   { value: "bayerMatrixMeshDark", label: "メッシュ（暗）" },
   { value: "bayerMatrixPolkadotLight", label: "ハーフトーン（明）" },

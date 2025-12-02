@@ -162,7 +162,7 @@ const Header: React.FC<Props> = ({ isJP, setIsJP }) => {
             }}
             width={40}
           />
-          {isPC ? "Langage" : ""}
+          Langage
         </button>
         <div style={title}>
           <div style={logobox}>

@@ -77,6 +77,7 @@ const Header: React.FC<Props> = ({ isJP, setIsJP }) => {
 
   const langButton: React.CSSProperties = {
     position: "absolute",
+    display: "inline-block",
     top: "50%",
     right: "1rem",
     transform: "translate(0%,-50%)",
@@ -154,15 +155,9 @@ const Header: React.FC<Props> = ({ isJP, setIsJP }) => {
         <button style={langButton} onClick={() => setIsJP(!isJP)}>
           <img
             src={isJP ? "/langJA.PNG" : "/langEN.PNG"}
-            style={{
-              userSelect: "none",
-              pointerEvents: "none",
-              display: "inline-block",
-              marginRight: "0.5rem",
-            }}
+            style={{ userSelect: "none", pointerEvents: "none" }}
             width={40}
           />
-          {isPC ? "Langage" : ""}
         </button>
         <div style={title}>
           <div style={logobox}>

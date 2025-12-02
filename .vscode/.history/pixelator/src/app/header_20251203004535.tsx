@@ -158,11 +158,11 @@ const Header: React.FC<Props> = ({ isJP, setIsJP }) => {
               userSelect: "none",
               pointerEvents: "none",
               display: "inline-block",
-              marginRight: "0.5rem",
+              marginLeft: "1rem",
             }}
             width={40}
           />
-          {isPC ? "Langage" : ""}
+          Langage
         </button>
         <div style={title}>
           <div style={logobox}>

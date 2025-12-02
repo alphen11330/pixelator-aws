@@ -550,15 +550,6 @@ const PixelArtProcessor: React.FC<Props> = ({
             );
             break;
 
-          case "bayerMatrixDiagonal2":
-            processedImageData = applyOrderedDithering(
-              imageData,
-              paletteRGB,
-              ditherStrength,
-              bayerMatrixDiagonal2
-            );
-            break;
-
           case "bayerMatrixMeshLight":
             processedImageData = applyOrderedDithering(
               imageData,
@@ -734,19 +725,19 @@ const bayerMatrixCRT_Horizontal = [
 ];
 
 const bayerMatrixDiagonal1 = [
-  // 逆斜めストライプ↗
-  [32, 63, 32, 0, 32, 63, 32, 0],
-  [63, 32, 0, 32, 63, 32, 0, 32],
-  [32, 0, 32, 63, 32, 0, 32, 63],
-  [0, 32, 63, 32, 0, 32, 63, 32],
-  [32, 63, 32, 0, 32, 63, 32, 0],
-  [63, 32, 0, 32, 63, 32, 0, 32],
-  [32, 0, 32, 63, 32, 0, 32, 63],
-  [0, 32, 63, 32, 0, 32, 63, 32],
+  // 逆斜めストライプ ↖↖ (元の行列の反転)
+  [63, 31, 0, 31, 63, 31, 0, 31],
+  [31, 63, 31, 0, 31, 63, 31, 0],
+  [0, 31, 63, 31, 0, 31, 63, 31],
+  [31, 0, 31, 63, 31, 0, 31, 63],
+  [63, 31, 0, 31, 63, 31, 0, 31],
+  [31, 63, 31, 0, 31, 63, 31, 0],
+  [0, 31, 63, 31, 0, 31, 63, 31],
+  [31, 0, 31, 63, 31, 0, 31, 63],
 ];
 
 const bayerMatrixDiagonal2 = [
-  // 斜めストライプ↘
+  // 斜めストライプ↘↘
   [0, 32, 63, 32, 0, 32, 63, 32],
   [32, 0, 32, 63, 32, 0, 32, 63],
   [63, 32, 0, 32, 63, 32, 0, 32],
