@@ -95,8 +95,7 @@ const ColorPalette: React.FC<Props> = ({
   // カラーパレットの生成
   const fetchPalette = async (img: string | null) => {
     if (img) {
-      // const palette = await createPalette(img, Math.pow(2, colorLevels));
-      const palette = await createPalette(img, colorLevels);
+      const palette = await createPalette(img, Math.pow(2, colorLevels));
       setColorPalette(palette);
     }
   };
@@ -158,9 +157,7 @@ const ColorPalette: React.FC<Props> = ({
             htmlFor="fileForPalette-upload"
             className={style.createPalettereButton}
           >
-            <div>
-              {isJP ? "画像からパレットを作成" : "Create Palette from IMG"}
-            </div>
+            <div>{isJP ? "画像/.pal" : "IMG or .pal"}</div>
           </label>
           <input
             id="fileForPalette-upload"

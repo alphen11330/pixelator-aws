@@ -467,7 +467,7 @@ export default function Page() {
                         max={8}
                         step={1}
                         value={colorLevels}
-                        unit={isJP ? "色" : "colors"}
+                        unit={"bit"}
                         setValue={setColorLevels}
                       />
                     </div>

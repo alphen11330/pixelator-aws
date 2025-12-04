@@ -95,8 +95,7 @@ const ColorPalette: React.FC<Props> = ({
   // カラーパレットの生成
   const fetchPalette = async (img: string | null) => {
     if (img) {
-      // const palette = await createPalette(img, Math.pow(2, colorLevels));
-      const palette = await createPalette(img, colorLevels);
+      const palette = await createPalette(img, Math.pow(2, colorLevels));
       setColorPalette(palette);
     }
   };

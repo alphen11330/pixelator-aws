@@ -25,7 +25,7 @@ const ImgPreviewer: React.FC<Props> = ({
     zIndex: "20",
     userSelect: "none",
     pointerEvents: "none",
-    opacity: isPreview ? "1" : "0",
+
     transition: "all 0.35s",
     imageRendering: "pixelated",
   };

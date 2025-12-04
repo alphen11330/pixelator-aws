@@ -15,18 +15,17 @@ const ImgPreviewer: React.FC<Props> = ({
 }) => {
   const previewImgStyle: React.CSSProperties = {
     position: "absolute",
+    background: "rgba(0, 0, 0,0.6)",
     top: "0px",
     left: "0px",
     width: "100%",
     height: "100%",
-    background: "rgba(0,0,0,0.6)",
-    backdropFilter: "blur(4px)",
     objectFit: "contain",
     zIndex: "20",
     userSelect: "none",
     pointerEvents: "none",
+    transition: "all 0.3s",
     opacity: isPreview ? "1" : "0",
-    transition: "all 0.35s",
     imageRendering: "pixelated",
   };
 

@@ -541,3 +541,22 @@
   box-shadow: 0 2px 8px rgba(255, 153, 204, 0.6);
   cursor: pointer;
 }
+
+/* keyframes で背景位置を 0% から 100% まで動かす動きを定義 */
+@keyframes background-scroll {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    /* 背景サイズに合わせて適切な距離を設定することで、シームレスなループが可能 */
+    background-position: 40px 40px;
+    /* backgroundSize: "40px 40px" に合わせる */
+  }
+}
+
+/* アニメーションを適用するためのCSSクラス */
+.animated-dots-box {
+  animation: background-scroll 2s linear infinite;
+  /* 2秒かけて、一定速度で無限にループ */
+}

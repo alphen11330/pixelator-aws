@@ -17,9 +17,7 @@ import RandomButton from "./components/RandomButton";
 import Header from "./header";
 
 import { pupupuFont } from "./fonts/pupupuFont";
-import ImgPreviewer from "./components/ImgPreviewer";
-import { Exo_2 } from "next/font/google";
-import InputColorLevelsRange from "./components/InputColorLevelsRange";
+import ImgPreviewer from "./components/imgPreviewer";
 
 declare global {
   interface Window {
@@ -218,25 +216,36 @@ export default function Page() {
         {/* パネル操作画面 */}
         <div style={gridBox}>
           {imageSrc && (
-            <RandomButton
-              setColorCollection={setColorCollection}
-              setEdgeEnhancement={setEdgeEnhancement}
-              setColorReduction={setColorReduction}
-              setContrast={setContrast}
-              setIsHue={setIsHue}
-              setIsSaturation={setIsSaturation}
-              setPixelLength={setPixelLength}
-              setContrastLevel={setContrastLevel}
-              setHue={setHue}
-              setSaturation={setSaturation}
-              setWhiteSize={setWhiteSize}
-              setDitherStrength={setDitherStrength}
-              setColorPalette={setColorPalette}
-              setDitherType={setDitherType}
-              setColorLevels={setColorLevels}
-              colorLevels={colorLevels}
-              setLockPalette={setLockPalette}
-            />
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                width: "calc(100% - 6rem)",
+                marginTop: "0.5rem",
+                marginInline: "auto",
+                alignItems: "strech",
+              }}
+            >
+              <RandomButton
+                setColorCollection={setColorCollection}
+                setEdgeEnhancement={setEdgeEnhancement}
+                setColorReduction={setColorReduction}
+                setContrast={setContrast}
+                setIsHue={setIsHue}
+                setIsSaturation={setIsSaturation}
+                setPixelLength={setPixelLength}
+                setContrastLevel={setContrastLevel}
+                setHue={setHue}
+                setSaturation={setSaturation}
+                setWhiteSize={setWhiteSize}
+                setDitherStrength={setDitherStrength}
+                setColorPalette={setColorPalette}
+                setDitherType={setDitherType}
+                setColorLevels={setColorLevels}
+                colorLevels={colorLevels}
+                setLockPalette={setLockPalette}
+              />
+            </div>
           )}
           <div
             style={{
@@ -461,13 +470,13 @@ export default function Page() {
                           setValue={setDitherStrength}
                         />
                       )}
-                      <InputColorLevelsRange
+                      <InputRange
                         name={isJP ? "カラー数" : "Palette Colors"}
                         min={1}
                         max={8}
                         step={1}
                         value={colorLevels}
-                        unit={isJP ? "色" : "colors"}
+                        unit={"bit"}
                         setValue={setColorLevels}
                       />
                     </div>
@@ -480,7 +489,7 @@ export default function Page() {
                   colorPalette={colorPalette}
                   setColorPalette={setColorPalette}
                   smoothImageSrc={smoothImageSrc}
-                  colorLevels={Math.pow(2, colorLevels)}
+                  colorLevels={colorLevels}
                   imageSrc={imageSrc}
                   lockPalette={lockPalette}
                   setLockPalette={setLockPalette}

@@ -19,7 +19,6 @@ import Header from "./header";
 import { pupupuFont } from "./fonts/pupupuFont";
 import ImgPreviewer from "./components/ImgPreviewer";
 import { Exo_2 } from "next/font/google";
-import InputColorLevelsRange from "./components/InputColorLevelsRange";
 
 declare global {
   interface Window {
@@ -461,13 +460,13 @@ export default function Page() {
                           setValue={setDitherStrength}
                         />
                       )}
-                      <InputColorLevelsRange
+                      <InputRange
                         name={isJP ? "カラー数" : "Palette Colors"}
                         min={1}
-                        max={8}
+                        max={256}
                         step={1}
                         value={colorLevels}
-                        unit={isJP ? "色" : "colors"}
+                        unit={"bit"}
                         setValue={setColorLevels}
                       />
                     </div>
@@ -480,7 +479,7 @@ export default function Page() {
                   colorPalette={colorPalette}
                   setColorPalette={setColorPalette}
                   smoothImageSrc={smoothImageSrc}
-                  colorLevels={Math.pow(2, colorLevels)}
+                  colorLevels={colorLevels}
                   imageSrc={imageSrc}
                   lockPalette={lockPalette}
                   setLockPalette={setLockPalette}

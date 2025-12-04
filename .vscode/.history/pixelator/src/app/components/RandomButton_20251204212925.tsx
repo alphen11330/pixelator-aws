@@ -189,7 +189,7 @@ const RandomButton: React.FC<Props> = ({
       <div
         style={{
           display: "flex",
-          justifyContent: "left",
+          justifyContent: "end",
           width: "calc(100% - 6rem)",
           marginTop: "0.5rem",
           marginInline: "auto",
@@ -202,7 +202,6 @@ const RandomButton: React.FC<Props> = ({
             justifyContent: "center",
             alignItems: "center",
             width: "40%",
-            marginRight: "1rem",
           }}
           className={style.greenShineButton}
           onClick={() => setRandomNatural()}
