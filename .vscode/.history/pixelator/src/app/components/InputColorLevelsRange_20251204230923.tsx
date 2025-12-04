@@ -53,7 +53,7 @@ const InputRange: React.FC<Props> = ({
             value={Math.round(Math.pow(2, value))}
             onChange={(e) => {
               const raw = parseFloat(e.target.value);
-              if (isNaN(raw) || raw <= 1 || raw > 256) return;
+              if (isNaN(raw) || raw <= 1 || raw > 255) return;
               const exponent = Math.log2(raw);
               setValue(exponent);
             }}
