@@ -30,35 +30,19 @@ const ImgPreviewer: React.FC<Props> = ({
     imageRendering: "pixelated",
   };
 
-  const handleToggle = () => {
-    setIsPreview(!isPreview);
-  };
-
   return (
     <>
       {imageSrc && (
         <>
           <img
             src={imageSrc}
-            alt="edited Image"
-            style={previewImgStyle}
-            onContextMenu={(e) => e.preventDefault()}
-          />
-          <div
+            alt="preview"
             style={{
-              position: "absolute",
-              top: "0",
-              left: "0",
-              width: "100%",
-              height: "100%",
-              zIndex: "21",
-              userSelect: isPreview ? "all" : "none",
-              pointerEvents: isPreview ? "all" : "none",
-              cursor: isPreview ? "pointer" : "default",
-              WebkitTapHighlightColor: "transparent",
+              ...previewImgStyle,
+              pointerEvents: "auto", // ←ここを画像がイベントを受け取るように
             }}
-            onClick={handleToggle}
-            onTouchEnd={handleToggle}
+            onClick={() => setIsPreview(!isPreview)}
+            onTouchStart={() => setIsPreview(!isPreview)}
           />
         </>
       )}

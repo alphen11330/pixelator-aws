@@ -65,5 +65,3 @@ const ImgPreviewer: React.FC<Props> = ({
     </>
   );
 };
-
-export default ImgPreviewer;

@@ -30,10 +30,6 @@ const ImgPreviewer: React.FC<Props> = ({
     imageRendering: "pixelated",
   };
 
-  const handleToggle = () => {
-    setIsPreview(!isPreview);
-  };
-
   return (
     <>
       {imageSrc && (
@@ -49,16 +45,14 @@ const ImgPreviewer: React.FC<Props> = ({
               position: "absolute",
               top: "0",
               left: "0",
-              width: "100%",
-              height: "100%",
+              width: "10%",
+              height: "10%",
               zIndex: "21",
+              background: isPreview ? "red" : "",
               userSelect: isPreview ? "all" : "none",
-              pointerEvents: isPreview ? "all" : "none",
-              cursor: isPreview ? "pointer" : "default",
-              WebkitTapHighlightColor: "transparent",
             }}
-            onClick={handleToggle}
-            onTouchEnd={handleToggle}
+            onClick={() => setIsPreview(!isPreview)}
+            onTouchStart={() => setIsPreview(!isPreview)}
           />
         </>
       )}

@@ -1,13 +1,3 @@
-"use client";
-import React from "react";
-import style from "../util.module.css";
-
-type Props = {
-  imageSrc: string | null;
-  isPreview: boolean;
-  setIsPreview: React.Dispatch<React.SetStateAction<boolean>>;
-};
-
 const ImgPreviewer: React.FC<Props> = ({
   imageSrc,
   isPreview,
@@ -65,5 +55,3 @@ const ImgPreviewer: React.FC<Props> = ({
     </>
   );
 };
-
-export default ImgPreviewer;
