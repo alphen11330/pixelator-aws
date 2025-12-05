@@ -11,11 +11,10 @@ export const paletteFiles = [
     ["chocomilk-8.pal", "Blylzz", "https://lospec.com/palette-list/chocomilk-8"],
     ["eulbink.pal", "Inkpendude", "https://lospec.com/palette-list/eulbink"],
     ["steam-lords.pal", "Slynyrd", "https://lospec.com/palette-list/steam-lords"],
-    ["midnight-ablaze.pal", "Inkpendude", "https://lospec.com/palette-list/midnight-ablaze"],
-    ["blessing.pal", "まるき", "https://lospec.com/palette-list/blessing"],
-    ["cl8uds.pal", "_Nicola", "https://lospec.com/palette-list/cl8uds"],
     ["wplace.pal", "wplace", "https://wplace.live/"],
     ["pikusere-9.pal", "adamadamode", "https://x.com/adamadamode"],
 ];
 
-
+// ["midnight-ablaze.pal", "Inkpendude", "https://lospec.com/palette-list/midnight-ablaze"],
+// ["blessing.pal", "まるき", "https://lospec.com/palette-list/blessing"],
+// ["cl8uds.pal", "_Nicola", "https://lospec.com/palette-list/cl8uds"],
