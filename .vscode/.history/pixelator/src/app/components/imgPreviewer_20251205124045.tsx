@@ -52,7 +52,7 @@ const ImgPreviewer: React.FC<Props> = ({
               pointerEvents: isPreview ? "all" : "none",
             }}
             onClick={() => setIsPreview(!isPreview)}
-            onTouchStart={() => setIsPreview(!isPreview)}
+            onTouchStart={() => setIsPreview(!isPreview)} // 追加
           />
         </>
       )}
