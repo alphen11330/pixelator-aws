@@ -9,5 +9,5 @@ export const paletteFiles = [
     ["eulbink.pal", "Inkpendude", "https://lospec.com/palette-list/eulbink"],
     ["midnight-ablaze.pal", "Inkpendude", "https://lospec.com/palette-list/midnight-ablaze"],
     ["pikusere-9.pal", "adamadamode", "https://x.com/adamadamode"],
-    ["wplace.pal", "wplace", "https://wplace.live/"]
+    ["wplace.pal", "wplace",]
 ];
