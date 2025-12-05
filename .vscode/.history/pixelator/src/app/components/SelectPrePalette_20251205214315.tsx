@@ -6,7 +6,7 @@ type Props = {
   isJP: boolean;
 };
 
-const SelectPrePalette: React.FC<Props> = ({ setColorPalette, isJP }) => {
+const SelectPrePalette: React.FC<Props> = ({ setColorPalette }) => {
   const [isOpenContents, setIsContents] = useState(false);
 
   // 読み込んだパレット一覧（複数）
@@ -88,7 +88,7 @@ const SelectPrePalette: React.FC<Props> = ({ setColorPalette, isJP }) => {
   return (
     <>
       <div style={contentsBar} onClick={() => setIsContents((prev) => !prev)}>
-        <span>{isJP ? "プリパレットを選択" : "select Pre-Palette"}</span>
+        <span>プリパレットを選択</span>
 
         <span
           style={{
