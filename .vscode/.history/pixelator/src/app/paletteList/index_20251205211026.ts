@@ -6,7 +6,6 @@ export const paletteFiles = [
     ["slso8.pal", "Luis Miguel Maldonado", "https://lospec.com/palette-list/slso8"],
     ["lost-century.pal", "SurrealEmber", "https://lospec.com/palette-list/lost-century"],
     ["hollow.pal", "Poltergasm", "http://lospec.com/palette-list/hollow"],
-    ["chocomilk-8.pal", "Blylzz", "https://lospec.com/palette-list/chocomilk-8"],
     ["eulbink.pal", "Inkpendude", "https://lospec.com/palette-list/eulbink"],
     ["steam-lords.pal", "Slynyrd", "https://lospec.com/palette-list/steam-lords"],
     ["wplace.pal", "wplace", "https://wplace.live/"],

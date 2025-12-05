@@ -77,7 +77,7 @@ const SelectPrePalette: React.FC<Props> = ({ setColorPalette }) => {
     border: "solid 5px rgb(60, 58, 71)",
     borderRadius: "0 0 5px 5px",
     background: "rgb(189, 189, 195)",
-    height: isOpenContents ? "40vh" : "0px", // 開閉アニメーション
+    height: isOpenContents ? "50vh" : "0px", // 開閉アニメーション
     // maxHeight: "25vh",
     paddingInline: "1rem",
     overflow: "auto",
