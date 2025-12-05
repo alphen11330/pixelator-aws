@@ -1,6 +1,5 @@
 export const paletteFiles = [
     ["resurrect-64.pal", "Kerrie Lake", "https://lospec.com/palette-list/resurrect-64"],
-    ["aap-64.pal", "Adigun A. Polack", "https://lospec.com/palette-list/aap-64"],
     ["ammo-8.pal", "rsvp asap", "https://lospec.com/palette-list/ammo-8"],
     ["ice-cream-gb.pal", "Kerrie Lake", "https://lospec.com/palette-list/ice-cream-gb"],
     ["sweetie-16.pal", "GrafxKid", "https://lospec.com/palette-list/sweetie-16"],
