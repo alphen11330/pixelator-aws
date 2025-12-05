@@ -48,7 +48,7 @@ const ImgPreviewer: React.FC<Props> = ({
               width: "10%",
               height: "10%",
               zIndex: "21",
-              background: isPreview ? "red" : "",
+              background: "red",
               userSelect: isPreview ? "all" : "none",
               pointerEvents: isPreview ? "all" : "none",
             }}
