@@ -507,62 +507,47 @@ export default function Page() {
                 borderRadius: "5px",
               }}
             >
-              <span
-                style={{
-                  display: "block",
-                  width: "fit-content",
-                  marginInline: "auto",
-                  marginBottom: "0.8rem",
-                  fontSize: "4rem",
-                  color: "rgb(255, 74, 74)",
-                  WebkitTextStroke: "1px rgb(255, 235, 235)",
-                  textShadow: "0.3rem 0.3rem  rgb(160, 161, 228)",
-                }}
-                className={pupupuFont.className}
-              >
-                {isJP ? "読んでね！" : "READ!"}
-              </span>
+              <div>
+  {/* タイトル部分 */}
+  <span
+    style={{
+      display: "block",
+      width: "fit-content",
+      marginInline: "auto",
+      marginBottom: "0.8rem",
+      fontSize: "4rem",
+      color: "rgb(255, 74, 74)",
+      WebkitTextStroke: "1px rgb(255, 235, 235)",
+      textShadow: "0.3rem 0.3rem rgb(160, 161, 228)",
+    }}
+    className={pupupuFont.className}
+  >
+    {isJP ? '読んでね！' : 'READ ME!'}
+  </span>
 
-              <span
-                style={{
-                  display: "block",
-                  width: "fit-content",
-                  marginInline: "auto",
-                  marginBottom: "0.8rem",
-                  fontSize: "1.2rem",
-                }}
-              >
-                {isJP
-                  ? "-当サイトの利用について-"
-                  : "- About the use of this site -"}
-              </span>
-              <span>
-                <p>
-                  {isJP ? "・商用利用OKです" : "・Commercial use is allowed."}
-                </p>
-                <p>{isJP ? "・報告不要です" : "・No reporting required."}</p>
-                <p>
-                  {isJP
-                    ? "・クレジット表記不要です"
-                    : "・No credit notation required."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・当ツールで情報取集は行っておりません"
-                    : "・This tool does not collect information."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・公序良俗に反しない使い方をお願いいたします"
-                    : "・Please use it in a way that does not violate public order and morals."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・予告なくサービス変更や終了をする場合があります"
-                    : "・The service may be changed or terminated without prior notice."}
-                </p>
-              </span>
-            </div>
+  {/* サブタイトル部分 */}
+  <span
+    style={{
+      display: "block",
+      width: "fit-content",
+      marginInline: "auto",
+      marginBottom: "0.8rem",
+      fontSize: "1.2rem",
+    }}
+  >
+    {isJP ? '-当サイトの利用について-' : '- Terms of Use -'}
+  </span>
+
+  {/* 箇条書き部分 */}
+  <span>
+    <p>{isJP ? '・商用利用OKです' : '・Commercial use is allowed.'}</p>
+    <p>{isJP ? '・報告不要です' : '・No reporting required.'}</p>
+    <p>{isJP ? '・クレジット表記不要です' : '・No credit notation required.'}</p>
+    <p>{isJP ? '・当ツールで情報取集は行っておりません' : '・This tool does not collect information.'}</p>
+    <p>{isJP ? '・公序良俗に反しない使い方をお願いいたします' : '・Please use it in a way that does not violate public order and morals.'}</p>
+    <p>{isJP ? '・予告なくサービス変更や終了をする場合があります' : '・The service may be changed or terminated without prior notice.'}</p>
+  </span>
+</div>
           )}
         </div>
       </div>

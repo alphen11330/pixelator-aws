@@ -499,7 +499,6 @@ export default function Page() {
                 height: "auto",
                 marginInline: "auto",
                 padding: "1rem",
-                marginBlock: "1rem",
                 background: "rgb(255, 255, 255)",
                 border: "double 1px rgb(0,0,0)",
                 outline: "solid 1px rgb(0,0,0)",

@@ -520,7 +520,7 @@ export default function Page() {
                 }}
                 className={pupupuFont.className}
               >
-                {isJP ? "読んでね！" : "READ!"}
+                読んでね！
               </span>
 
               <span
@@ -532,9 +532,7 @@ export default function Page() {
                   fontSize: "1.2rem",
                 }}
               >
-                {isJP
-                  ? "-当サイトの利用について-"
-                  : "- About the use of this site -"}
+                {isJP ? "-当サイトの利用について-" : "- Terms of Use -"}
               </span>
               <span>
                 <p>

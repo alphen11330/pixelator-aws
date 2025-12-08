@@ -491,79 +491,39 @@ export default function Page() {
             </>
           )}
 
-          {/* 利用規約 */}
-          {!imageSrc && (
-            <div
+          <div
+            style={{
+              width: "80%",
+              height: "auto",
+              marginInline: "auto",
+              padding: "1rem",
+              marginBlock: "1rem",
+              background: "rgb(255, 255, 255)",
+              border: "solid 1px rgb(0,0,0)",
+            }}
+          >
+            <span
               style={{
-                width: "80%",
-                height: "auto",
+                display: "block",
+                width: "fit-content",
                 marginInline: "auto",
-                padding: "1rem",
                 marginBlock: "1rem",
-                background: "rgb(255, 255, 255)",
-                border: "double 1px rgb(0,0,0)",
-                outline: "solid 1px rgb(0,0,0)",
-                outlineOffset: "4px",
-                borderRadius: "5px",
+                fontSize: "1.2rem",
               }}
             >
-              <span
-                style={{
-                  display: "block",
-                  width: "fit-content",
-                  marginInline: "auto",
-                  marginBottom: "0.8rem",
-                  fontSize: "4rem",
-                  color: "rgb(255, 74, 74)",
-                  WebkitTextStroke: "1px rgb(255, 235, 235)",
-                  textShadow: "0.3rem 0.3rem  rgb(160, 161, 228)",
-                }}
-                className={pupupuFont.className}
-              >
-                {isJP ? "読んでね！" : "READ!"}
-              </span>
-
-              <span
-                style={{
-                  display: "block",
-                  width: "fit-content",
-                  marginInline: "auto",
-                  marginBottom: "0.8rem",
-                  fontSize: "1.2rem",
-                }}
-              >
-                {isJP
-                  ? "-当サイトの利用について-"
-                  : "- About the use of this site -"}
-              </span>
-              <span>
-                <p>
-                  {isJP ? "・商用利用OKです" : "・Commercial use is allowed."}
-                </p>
-                <p>{isJP ? "・報告不要です" : "・No reporting required."}</p>
-                <p>
-                  {isJP
-                    ? "・クレジット表記不要です"
-                    : "・No credit notation required."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・当ツールで情報取集は行っておりません"
-                    : "・This tool does not collect information."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・公序良俗に反しない使い方をお願いいたします"
-                    : "・Please use it in a way that does not violate public order and morals."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・予告なくサービス変更や終了をする場合があります"
-                    : "・The service may be changed or terminated without prior notice."}
-                </p>
-              </span>
-            </div>
-          )}
+              -当サイトの利用について-
+            </span>
+            <span style={{}}>
+              <p>・商用利用OKです</p>
+              <p>・報告不要です</p>
+              <p>・クレジット表記不要です</p>
+              <p>・当ツールで情報取集は行っておりません</p>
+              <p>　また今後も行う予定はございません</p>
+              <p>・公序良俗に反しない使い方をお願いいたします</p>
+              <p>・予告なくサービス変更や終了をする場合があります</p>
+              <p>　ご了承ください</p>
+            </span>
+          </div>
         </div>
       </div>
       {/* {isPainter && (

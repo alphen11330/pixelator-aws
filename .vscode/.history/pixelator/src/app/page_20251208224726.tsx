@@ -515,12 +515,12 @@ export default function Page() {
                   marginBottom: "0.8rem",
                   fontSize: "4rem",
                   color: "rgb(255, 74, 74)",
-                  WebkitTextStroke: "1px rgb(255, 235, 235)",
-                  textShadow: "0.3rem 0.3rem  rgb(160, 161, 228)",
+                  WebkitTextStroke: "0.5px rgb(33, 79, 184)",
+                  textShadow: "3px 2px  rgb(255, 146, 146)",
                 }}
                 className={pupupuFont.className}
               >
-                {isJP ? "読んでね！" : "READ!"}
+                読んでね！
               </span>
 
               <span
@@ -532,35 +532,15 @@ export default function Page() {
                   fontSize: "1.2rem",
                 }}
               >
-                {isJP
-                  ? "-当サイトの利用について-"
-                  : "- About the use of this site -"}
+                -当サイトの利用について-
               </span>
               <span>
-                <p>
-                  {isJP ? "・商用利用OKです" : "・Commercial use is allowed."}
-                </p>
-                <p>{isJP ? "・報告不要です" : "・No reporting required."}</p>
-                <p>
-                  {isJP
-                    ? "・クレジット表記不要です"
-                    : "・No credit notation required."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・当ツールで情報取集は行っておりません"
-                    : "・This tool does not collect information."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・公序良俗に反しない使い方をお願いいたします"
-                    : "・Please use it in a way that does not violate public order and morals."}
-                </p>
-                <p>
-                  {isJP
-                    ? "・予告なくサービス変更や終了をする場合があります"
-                    : "・The service may be changed or terminated without prior notice."}
-                </p>
+                <p>・商用利用OKです</p>
+                <p>・報告不要です</p>
+                <p>・クレジット表記不要です</p>
+                <p>・当ツールで情報取集は行っておりません</p>
+                <p>・公序良俗に反しない使い方をお願いいたします</p>
+                <p>・予告なくサービス変更や終了をする場合があります</p>
               </span>
             </div>
           )}

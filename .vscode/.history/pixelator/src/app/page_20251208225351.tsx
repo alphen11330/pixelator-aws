@@ -511,8 +511,7 @@ export default function Page() {
                 style={{
                   display: "block",
                   width: "fit-content",
-                  marginInline: "auto",
-                  marginBottom: "0.8rem",
+
                   fontSize: "4rem",
                   color: "rgb(255, 74, 74)",
                   WebkitTextStroke: "1px rgb(255, 235, 235)",
