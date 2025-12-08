@@ -348,7 +348,7 @@ const ColorPalette: React.FC<Props> = ({
   };
 
   const alignmentButtonStyle: React.CSSProperties = {
-    width: "30%",
+    width: "35%",
     height: "2rem",
     background: "rgb(206, 239, 255)",
     fontSize: "16px",

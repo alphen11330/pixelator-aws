@@ -484,7 +484,7 @@ const ColorPalette: React.FC<Props> = ({
             setColorPalette(sortPalette(colorPalette, "luminance"));
           }}
         >
-          {isJP ? "輝度" : "Luminance"}
+          {isJP ? "輝度" : "luminance"}
         </button>
 
         <button
