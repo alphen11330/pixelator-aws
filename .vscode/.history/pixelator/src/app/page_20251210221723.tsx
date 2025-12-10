@@ -570,7 +570,7 @@ export default function Page() {
                   alignItems: "center",
                   width: "fit-content",
                   marginLeft: "auto",
-                  marginTop: "1rem",
+                  marginTop: "o.8rem",
                 }}
               >
                 <span>{isJP ? "お問い合わせ：" : "Contact："}</span>

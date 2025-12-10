@@ -20,7 +20,6 @@ import { pupupuFont } from "./fonts/pupupuFont";
 import ImgPreviewer from "./components/ImgPreviewer";
 import { Exo_2 } from "next/font/google";
 import InputColorLevelsRange from "./components/InputColorLevelsRange";
-import Link from "next/link";
 
 declare global {
   interface Window {
@@ -508,12 +507,10 @@ export default function Page() {
                 borderRadius: "5px",
               }}
             >
-              <span
+              <div
                 style={{
                   display: "block",
-                  textAlign: "center",
-                  marginBottom: "0.8rem",
-                  marginTop: "-0.5rem",
+                  marginInline: "auto",
                   fontSize: "4rem",
                   color: "rgb(255, 74, 74)",
                   WebkitTextStroke: "1px rgb(255, 235, 235)",
@@ -522,7 +519,7 @@ export default function Page() {
                 className={pupupuFont.className}
               >
                 {isJP ? "読んでね！" : "READ!"}
-              </span>
+              </div>
 
               <span
                 style={{
@@ -563,36 +560,6 @@ export default function Page() {
                     : "・The service may be changed or terminated without prior notice."}
                 </p>
               </span>
-
-              <div
-                style={{
-                  display: "flex",
-                  alignItems: "center",
-                  width: "fit-content",
-                  marginLeft: "auto",
-                  marginTop: "1rem",
-                }}
-              >
-                <span>{isJP ? "お問い合わせ：" : "Contact："}</span>
-                <Link
-                  href="https://x.com/adamadamode"
-                  style={{
-                    display: "inline-block",
-                    width: "fit-content",
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    x="0px"
-                    y="0px"
-                    width="30"
-                    height="30"
-                    viewBox="0 0 50 50"
-                  >
-                    <path d="M 11 4 C 7.134 4 4 7.134 4 11 L 4 39 C 4 42.866 7.134 46 11 46 L 39 46 C 42.866 46 46 42.866 46 39 L 46 11 C 46 7.134 42.866 4 39 4 L 11 4 z M 13.085938 13 L 21.023438 13 L 26.660156 21.009766 L 33.5 13 L 36 13 L 27.789062 22.613281 L 37.914062 37 L 29.978516 37 L 23.4375 27.707031 L 15.5 37 L 13 37 L 22.308594 26.103516 L 13.085938 13 z M 16.914062 15 L 31.021484 35 L 34.085938 35 L 19.978516 15 L 16.914062 15 z"></path>
-                  </svg>
-                </Link>
-              </div>
             </div>
           )}
         </div>
