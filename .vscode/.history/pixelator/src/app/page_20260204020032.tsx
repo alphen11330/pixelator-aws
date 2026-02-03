@@ -543,7 +543,7 @@ export default function Page() {
                 <p>{isJP ? "・報告不要です" : "・No reporting required."}</p>
                 <p>
                   {isJP
-                    ? "・クレジットは表記不要です"
+                    ? "・クレジット表記不要です"
                     : "・No credit notation required."}
                 </p>
                 <p>
