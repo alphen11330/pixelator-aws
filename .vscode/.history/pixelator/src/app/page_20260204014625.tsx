@@ -20,6 +20,7 @@ import { pupupuFont } from "./fonts/pupupuFont";
 import ImgPreviewer from "./components/ImgPreviewer";
 import { Exo_2 } from "next/font/google";
 import InputColorLevelsRange from "./components/InputColorLevelsRange";
+import Link from "next/link";
 
 declare global {
   interface Window {
@@ -135,7 +136,6 @@ export default function Page() {
         isPreview={isPreview}
         setIsPreview={setIsPreview}
       />
-
       <div style={gridContainer}>
         <div
           style={{
@@ -252,6 +252,7 @@ export default function Page() {
               setSmoothImageSrc={setSmoothImageSrc}
               isJP={isJP}
             />
+
             {imageSrc && (
               <>
                 <Downloader // ドット画像をダウンロード
@@ -467,7 +468,7 @@ export default function Page() {
                         max={8}
                         step={1}
                         value={colorLevels}
-                        unit={"色"}
+                        unit={isJP ? "色" : "colors"}
                         setValue={setColorLevels}
                       />
                     </div>
@@ -489,6 +490,90 @@ export default function Page() {
               </div>
             </>
           )}
+
+          {/* 利用規約 */}
+          {!imageSrc && (
+            <div
+              style={{
+                width: "80%",
+                height: "auto",
+                marginInline: "auto",
+                padding: "1rem",
+                marginBlock: "1rem",
+                background: "rgb(255, 255, 255)",
+                border: "double 1px rgb(0,0,0)",
+                outline: "solid 1px rgb(0,0,0)",
+                outlineOffset: "4px",
+                borderRadius: "5px",
+              }}
+            >
+              <span
+                style={{
+                  display: "block",
+                  textAlign: "center",
+                  marginBottom: "0.8rem",
+                  marginTop: "-0.5rem",
+                  fontSize: "4rem",
+                  color: "rgb(255, 74, 74)",
+                  WebkitTextStroke: "1px rgb(255, 235, 235)",
+                  textShadow: "0.3rem 0.3rem  rgb(160, 161, 228)",
+                }}
+                className={pupupuFont.className}
+              >
+                {isJP ? "読んでね！" : "READ!"}
+              </span>
+
+              <span
+                style={{
+                  display: "block",
+                  width: "fit-content",
+                  marginInline: "auto",
+                  marginBottom: "0.8rem",
+                  fontSize: "1.2rem",
+                }}
+              >
+                {isJP
+                  ? "-当サイトの利用について-"
+                  : "- About the use of this site -"}
+              </span>
+              <span>
+                <p>
+                  {isJP ? "・商用利用OKです" : "・Commercial use is allowed."}
+                </p>
+                <p>{isJP ? "・報告不要です" : "・No reporting required."}</p>
+                <p>
+                  {isJP
+                    ? "・クレジット表記不要です"
+                    : "・No credit notation required."}
+                </p>
+                <p>
+                  {isJP
+                    ? "・当ツールで情報取集は行っておりません"
+                    : "・This tool does not collect information."}
+                </p>
+                <p>
+                  {isJP
+                    ? "・公序良俗に反しない使い方をお願いいたします"
+                    : "・Please use it in a way that does not violate public order and morals."}
+                </p>
+                <p>
+                  {isJP
+                    ? "・予告なくサービス変更や終了をする場合があります"
+                    : "・The service may be changed or terminated without prior notice."}
+                </p>
+              </span>
+
+              <div
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  width: "fit-content",
+                  marginLeft: "auto",
+                  marginTop: "1rem",
+                }}
+              ></div>
+            </div>
+          )}
         </div>
       </div>
       {/* {isPainter && (
@@ -498,7 +583,6 @@ export default function Page() {
           pixelLength={pixelLength}
         />
       )} */}
-
       {smoothImageSrc && imageSrc && (
         <>
           <ImageEditor
