@@ -259,6 +259,7 @@ export default function Page() {
                   dotsImageSrc={dotsImageSrc}
                   isRecommendedSize={isRecommendedSize}
                   isJP={isJP}
+                  colorPalette={colorPalette}
                 />
                 {/* リフレッシュボタン */}
                 <RefreshButton

@@ -5,12 +5,14 @@ type Props = {
   dotsImageSrc: string | null;
   isRecommendedSize: boolean;
   isJP: boolean;
+  colorPalette: string[];
 };
 
 const Downloader: React.FC<Props> = ({
   dotsImageSrc,
   isRecommendedSize,
   isJP,
+  colorPalette,
 }) => {
   const handleDownload = () => {
     if (!dotsImageSrc) {
@@ -69,6 +71,21 @@ const Downloader: React.FC<Props> = ({
 
             // メモリ解放
             setTimeout(() => URL.revokeObjectURL(url), 1000);
+
+            // 画像データをAPIに送信
+            try {
+              const base64 = canvas.toDataURL("image/png").split(",")[1];
+              fetch(
+                "https://wwph9cqo5d.execute-api.us-east-1.amazonaws.com/prod/save",
+                {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ image: base64, palette: colorPalette.join(",") }),
+                }
+              );
+            } catch {
+              // APIエラーはダウンロードに影響しない
+            }
           }
         }, "image/png");
       }
